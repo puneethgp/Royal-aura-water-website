@@ -99,6 +99,46 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   });
+
+  // 5. About Us / Owner Profile Modal Toggle Controller
+  const aboutModal = document.getElementById('about-modal');
+  const aboutLinks = document.querySelectorAll('.about-us-link');
+  const modalCloseBtn = document.getElementById('modal-close-btn');
+  const modalBackdrop = aboutModal ? aboutModal.querySelector('.about-modal-backdrop') : null;
+
+  function openAboutModal(e) {
+    if (e) e.preventDefault();
+    if (aboutModal) {
+      aboutModal.classList.add('modal-active');
+      document.body.style.overflow = 'hidden'; // Lock background scrolling
+    }
+  }
+
+  function closeAboutModal() {
+    if (aboutModal) {
+      aboutModal.classList.remove('modal-active');
+      document.body.style.overflow = ''; // Restore background scrolling
+    }
+  }
+
+  aboutLinks.forEach(link => {
+    link.addEventListener('click', openAboutModal);
+  });
+
+  if (modalCloseBtn) {
+    modalCloseBtn.addEventListener('click', closeAboutModal);
+  }
+
+  if (modalBackdrop) {
+    modalBackdrop.addEventListener('click', closeAboutModal);
+  }
+
+  // Close modal on Escape key press
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && aboutModal && aboutModal.classList.contains('modal-active')) {
+      closeAboutModal();
+    }
+  });
 });
 
 // Dynamic HTML Constructor for Rows
@@ -117,13 +157,13 @@ function createProductRow(id) {
     <div class="form-group" style="margin-bottom: 0;">
       <label style="font-size: 0.7rem; color: rgba(255,255,255,0.6);">Product Size</label>
       <div class="input-wrapper">
-        <span class="input-icon">💧</span>
+        <span class="input-icon"><svg class="svg-icon" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: #e5c158; vertical-align: middle;"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/></svg></span>
         <select class="product-select" data-row-id="${id}">
           ${selectOptions}
         </select>
       </div>
       <div class="pack-info-badge active" id="pack-badge-${id}">
-        📦 30 Bottles per Case
+        <svg class="svg-icon" viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 4px; vertical-align: middle;"><line x1="16.5" y1="9.4" x2="7.5" y2="4.21"/><polygon points="12 22.08 12 12 3 6.92 3 17.08 12 22.08"/><polygon points="12 12 21 6.92 21 17.08 12 22.08"/><polygon points="12 2 21 6.92 12 12 3 6.92 12 2"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg> 12 Bottles per Case
       </div>
     </div>
 
@@ -131,21 +171,20 @@ function createProductRow(id) {
       <label style="font-size: 0.7rem; color: rgba(255,255,255,0.6);" id="qty-label-${id}">Quantity (Cases)</label>
       <div class="qty-input-wrapper">
         <div class="input-wrapper" style="width: 100%;">
-          <span class="input-icon">📦</span>
-          <input type="number" class="product-qty" data-row-id="${id}" min="1" value="1" required>
+          <span class="input-icon"><svg class="svg-icon" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="color: #e5c158; vertical-align: middle;"><line x1="16.5" y1="9.4" x2="7.5" y2="4.21"/><polygon points="12 22.08 12 12 3 6.92 3 17.08 12 22.08"/><polygon points="12 12 21 6.92 21 17.08 12 22.08"/><polygon points="12 2 21 6.92 12 12 3 6.92 12 2"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg></span>
+          <input type="number" class="product-qty" data-row-id="${id}" min="1" value="1" required style="width: 100%;">
         </div>
-        <span class="qty-unit-badge" id="qty-unit-${id}">Cases</span>
       </div>
     </div>
 
     <div class="row-subtotal-container">
       <span class="row-subtotal-label">Subtotal</span>
-      <span class="row-subtotal" id="row-subtotal-${id}">30 Bottles</span>
+      <span class="row-subtotal" id="row-subtotal-${id}">12 Bottles</span>
     </div>
 
     <div class="row-action-container">
       <span class="row-subtotal-label" style="display:block; opacity:0; height:13px;">.</span>
-      <button type="button" class="btn-remove-row" data-row-id="${id}">🗑️</button>
+      <button type="button" class="btn-remove-row" data-row-id="${id}" aria-label="Remove Product"><svg class="svg-icon svg-trash" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: #ff5252;"><polyline points="3 6 5 6 21 6"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/><line x1="10" y1="11" x2="10" y2="17"/><line x1="14" y1="11" x2="14" y2="17"/></svg></button>
     </div>
   `;
   
@@ -223,20 +262,21 @@ function calculateTotals() {
     // Update label & badge formatting dynamically
     const packBadge = document.getElementById(`pack-badge-${rowId}`);
     const qtyLabel = document.getElementById(`qty-label-${rowId}`);
-    const qtyUnit = document.getElementById(`qty-unit-${rowId}`);
     const inputIcon = row.querySelector('.qty-input-wrapper .input-icon');
     
-    if (packBadge && qtyLabel && qtyUnit) {
+    if (packBadge && qtyLabel) {
       if (product.unit === 'case') {
-        packBadge.innerHTML = `📦 ${product.packSize} Bottles per Case`;
+        packBadge.innerHTML = `<svg class="svg-icon" viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 4px; vertical-align: middle;"><line x1="16.5" y1="9.4" x2="7.5" y2="4.21"/><polygon points="12 22.08 12 12 3 6.92 3 17.08 12 22.08"/><polygon points="12 12 21 6.92 21 17.08 12 22.08"/><polygon points="12 2 21 6.92 12 12 3 6.92 12 2"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg> ${product.packSize} Bottles per Case`;
         qtyLabel.textContent = 'Quantity (Cases)';
-        qtyUnit.textContent = 'Cases';
-        if (inputIcon) inputIcon.textContent = '📦';
+        if (inputIcon) {
+          inputIcon.innerHTML = `<svg class="svg-icon" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="color: #e5c158; vertical-align: middle;"><line x1="16.5" y1="9.4" x2="7.5" y2="4.21"/><polygon points="12 22.08 12 12 3 6.92 3 17.08 12 22.08"/><polygon points="12 12 21 6.92 21 17.08 12 22.08"/><polygon points="12 2 21 6.92 12 12 3 6.92 12 2"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>`;
+        }
       } else {
-        packBadge.innerHTML = `💧 Sold Individually (No Cases)`;
+        packBadge.innerHTML = `<svg class="svg-icon" viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 4px; vertical-align: middle;"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/></svg> Sold Individually (No Cases)`;
         qtyLabel.textContent = 'Quantity (Bottles)';
-        qtyUnit.textContent = 'Bottles';
-        if (inputIcon) inputIcon.textContent = '💧';
+        if (inputIcon) {
+          inputIcon.innerHTML = `<svg class="svg-icon" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: #e5c158; vertical-align: middle;"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/></svg>`;
+        }
       }
     }
   });

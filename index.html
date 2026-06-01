@@ -22,11 +22,11 @@
           <li><a href="#home" class="active">Home</a></li>
           <li><a href="#products">Products</a></li>
           <li><a href="#bulk-order">Bulk Order</a></li>
-          <li><a href="#about">About Us</a></li>
+          <li><a href="#" class="about-us-link">About Us</a></li>
         </ul>
         <div class="nav-action" style="display: flex; align-items: center; gap: 1.5rem;">
-           <a href="tel:+917676445237" class="nav-phone" style="font-weight: 600; color: var(--primary-blue); font-size: 0.95rem; display: inline-flex; align-items: center; gap: 5px;">
-             📞 +91 76764 45237
+           <a href="tel:+917676445237" class="nav-phone" style="font-weight: 600; color: var(--primary-blue); font-size: 0.95rem; display: inline-flex; align-items: center; gap: 8px;">
+             <svg class="svg-icon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="color: var(--primary-blue-btn);"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg> +91 76764 45237
            </a>
            <a href="#bulk-order" class="btn-primary order-trigger">Order Now</a>
         </div>
@@ -49,8 +49,10 @@
           <div class="hero-image-wrapper">
              <img src="/bottle.jpg" alt="Royal Aura Premium Bottle" class="hero-bottle-img">
              <div class="badge-guarantee">
-               <span class="badge-icon">🛡️</span>
-               <span class="badge-text">100% PURE<br>GUARANTEE</span>
+               <span class="badge-icon" style="line-height: 1; display: flex; align-items: center; justify-content: center;">
+                 <svg class="svg-icon" viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: #e5c158;"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+               </span>
+               <span class="badge-text" style="margin-top: 8px;">100% PURE<br>GUARANTEE</span>
              </div>
           </div>
         </div>
@@ -66,7 +68,9 @@
         </div>
         <div class="bento-grid fade-in">
           <div class="bento-card triple-purification">
-            <div class="bento-icon">💧</div>
+            <div class="bento-icon" style="display: flex; align-items: center; margin-bottom: 1rem;">
+              <svg class="svg-icon" viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: var(--primary-blue-btn);"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/></svg>
+            </div>
             <h3>Triple Purification</h3>
             <p>Our signature process combines Reverse Osmosis, UV treatment, and Ozone enrichment to eliminate impurities while preserving essential lightness.</p>
             <div class="bento-tags">
@@ -80,10 +84,14 @@
              <span class="collection-tag" style="color: #e5c158; font-size: 0.7rem; margin-bottom: 0.5rem; letter-spacing: 1.5px;">LEGENDARY ORIGIN</span>
              <h3>Waters of Chitradurga</h3>
              <p>Sourced from the historic, pristine valleys of Vani Vilas Sagara. A legendary purity crafted for royalty.</p>
-             <span class="arrow-icon">→</span>
+             <span class="arrow-icon" style="display: flex; align-items: center; justify-content: center; transition: transform 0.3s ease;">
+               <svg class="svg-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="color: #FFFFFF;"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+             </span>
           </div>
           <div class="bento-card natural-minerals">
-            <div class="bento-icon gold-icon">💎</div>
+            <div class="bento-icon gold-icon" style="display: flex; align-items: center; margin-bottom: 1rem;">
+              <svg class="svg-icon" viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: var(--gold);"><path d="M6 3h12l4 6-10 13L2 9z"/><path d="M11 3 8 9l4 13 4-13-3-6"/><path d="M2 9h20"/></svg>
+            </div>
             <h3>Natural Minerals</h3>
             <p>Perfectly balanced with essential electrolytes for superior hydration and a crisp, refreshing finish.</p>
           </div>
@@ -116,7 +124,9 @@
                <p>Perfect for corporate meetings and executive events where elegance meets portability.</p>
                <div class="product-action-row">
                  <span class="price">₹10.00</span>
-                 <button class="cart-btn order-trigger" data-product-key="500ml">🛒</button>
+                 <button class="cart-btn order-trigger" data-product-key="500ml" aria-label="Add to Inquiry">
+                   <svg class="svg-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="color: #FFFFFF; vertical-align: middle;"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+                 </button>
                </div>
             </div>
           </div>
@@ -133,7 +143,9 @@
                <p>Our signature faceted bottle. A statement of purity and status on any table.</p>
                <div class="product-action-row">
                  <span class="price">₹20.00</span>
-                 <button class="cart-btn order-trigger" data-product-key="1-ltr">🛒</button>
+                 <button class="cart-btn order-trigger" data-product-key="1-ltr" aria-label="Add to Inquiry">
+                   <svg class="svg-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="color: #FFFFFF; vertical-align: middle;"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+                 </button>
                </div>
             </div>
           </div>
@@ -149,7 +161,9 @@
                <p>Taller, broader, and more robust. Perfect for family dinners and active days.</p>
                <div class="product-action-row">
                  <span class="price">₹35.00</span>
-                 <button class="cart-btn order-trigger" data-product-key="2-ltr">🛒</button>
+                 <button class="cart-btn order-trigger" data-product-key="2-ltr" aria-label="Add to Inquiry">
+                   <svg class="svg-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="color: #FFFFFF; vertical-align: middle;"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+                 </button>
                </div>
             </div>
           </div>
@@ -166,7 +180,9 @@
                <p>Uninterrupted purity with a sleek luxury handle. Ideal for home and offices.</p>
                <div class="product-action-row">
                  <span class="price">₹80.00</span>
-                 <button class="cart-btn order-trigger" data-product-key="5-ltr">🛒</button>
+                 <button class="cart-btn order-trigger" data-product-key="5-ltr" aria-label="Add to Inquiry">
+                   <svg class="svg-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="color: #FFFFFF; vertical-align: middle;"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+                 </button>
                </div>
             </div>
           </div>
@@ -187,6 +203,11 @@
           <!-- Left side: pH Circle -->
           <div class="ph-circle-wrapper">
             <div class="ph-circle">
+              <!-- Water Waves overlays -->
+              <div class="ph-waves-container">
+                <div class="ph-wave ph-wave-back"></div>
+                <div class="ph-wave ph-wave-front"></div>
+              </div>
               <span class="ph-value">7.3</span>
               <span class="ph-label">pH Balance</span>
             </div>
@@ -264,7 +285,9 @@
           <div class="delivery-map-card">
             <img src="/karnataka_map.png" alt="Royal Aura Karnataka Coverage Map" class="map-img">
             <div class="map-badge">
-              <span class="map-badge-icon">📍</span>
+              <span class="map-badge-icon" style="line-height: 1; display: flex; align-items: center; justify-content: center;">
+                <svg class="svg-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: #ff5252; vertical-align: middle;"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              </span>
               <span class="map-badge-text">CURRENT HUB<br><strong>4 Major Cities Served</strong></span>
             </div>
           </div>
@@ -319,7 +342,9 @@
             <div class="form-group">
               <label for="bulk-name">Full Name <span class="required">*</span></label>
               <div class="input-wrapper">
-                <span class="input-icon">👤</span>
+                <span class="input-icon">
+                  <svg class="svg-icon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                </span>
                 <input type="text" id="bulk-name" placeholder="Enter your full name" required>
               </div>
             </div>
@@ -327,7 +352,9 @@
             <div class="form-group">
               <label for="bulk-address">Delivery Address <span class="required">*</span></label>
               <div class="input-wrapper">
-                <span class="input-icon">📍</span>
+                <span class="input-icon">
+                  <svg class="svg-icon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                </span>
                 <textarea id="bulk-address" placeholder="Enter your delivery address" rows="4" required></textarea>
               </div>
             </div>
@@ -335,7 +362,9 @@
             <div class="form-group">
               <label for="bulk-date">Date Needed <span class="required">*</span></label>
               <div class="input-wrapper">
-                <span class="input-icon">📅</span>
+                <span class="input-icon">
+                  <svg class="svg-icon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                </span>
                 <input type="date" id="bulk-date" required>
               </div>
             </div>
@@ -346,7 +375,7 @@
             <div class="builder-header">
               <h3 class="form-title">Select Products</h3>
               <button type="button" id="add-product-btn" class="btn-add-row">
-                <span class="plus-icon">+</span> Add Product
+                <svg class="svg-icon svg-plus" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: middle;"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg> Add Product
               </button>
             </div>
 
@@ -373,7 +402,7 @@
               </div>
 
               <button type="button" id="whatsapp-submit-btn" class="btn-whatsapp">
-                <span class="wa-icon">💬</span> Connect on WhatsApp
+                <svg class="svg-icon svg-whatsapp" viewBox="0 0 24 24" width="20" height="20" fill="currentColor" style="vertical-align: middle; margin-right: 5px;"><path d="M12.012 2c-5.506 0-9.988 4.47-9.988 9.951 0 1.763.459 3.42 1.263 4.873l-1.343 4.908 5.045-1.317A9.92 9.92 0 0 0 12.01 22c5.507 0 9.99-4.47 9.99-9.951C22 6.47 17.518 2 12.012 2zm6.186 14.18c-.256.716-1.5 1.39-2.07 1.453-.513.056-1.18.083-1.89-.147a11.13 11.13 0 0 1-5.187-3.268c-1.428-1.57-2.38-3.488-2.66-4.28-.28-.79-.028-1.218.232-1.52.228-.266.505-.62.756-.93.25-.31.336-.53.504-.88.168-.35.084-.66-.042-.926-.126-.265-1.12-2.73-1.54-3.73-.41-1.01-.82-.87-1.12-.885-.286-.015-.613-.015-.94-.015-.328 0-.86.122-1.314.62-.454.5-1.73 1.69-1.73 4.12 0 2.43 1.77 4.77 2.017 5.11a14.7 14.7 0 0 0 5.64 4.98c1.378.56 2.378.71 3.254.58 1.002-.15 3.08-1.258 3.516-2.477.437-1.22.437-2.267.308-2.483-.128-.217-.474-.35-.99-.61z"/></svg> Connect on WhatsApp
               </button>
               <p class="wa-disclaimer">Clicking will launch WhatsApp pre-filled with all these details.</p>
             </div>
@@ -382,7 +411,6 @@
       </div>
     </section>
 
-    <!-- Footer -->
     <footer id="contact" class="footer-light">
       <div class="container">
         <div class="footer-grid">
@@ -390,7 +418,14 @@
             <div class="logo">
               <span class="logo-text">Royal Aura</span>
             </div>
-            <p>Redefining hydration with a touch of royalty. Every bottle is a commitment to excellence and pure luxury.</p>
+            <p style="margin-bottom: 1.5rem;">Redefining hydration with a touch of royalty. Every bottle is a commitment to excellence and pure luxury.</p>
+            <div style="font-size: 0.8rem; color: var(--text-grey); line-height: 1.5; border-top: 1px solid rgba(0,0,0,0.06); padding-top: 1.25rem;">
+              <strong style="color: var(--primary-blue); font-size: 0.72rem; letter-spacing: 0.5px; text-transform: uppercase; display: block; margin-bottom: 4px;">Manufactured & Marketed By:</strong>
+              Royal Aura Beverages Pvt. Ltd.<br>
+              123, Blue Water Avenue,<br>
+              Premium Industrial Area,<br>
+              Chitradurga - 577501, Karnataka, India.
+            </div>
           </div>
           <div class="footer-col">
             <h3>Explore</h3>
@@ -403,14 +438,14 @@
             <h3>Services</h3>
             <ul>
               <li><a href="#bulk-order" class="order-trigger">Bulk Orders</a></li>
-              <li><a href="https://wa.me/917676445237" target="_blank">💬 WhatsApp Support</a></li>
-              <li><a href="tel:+917676445237" style="display: inline-flex; align-items: center; gap: 5px;">📞 +91 76764 45237</a></li>
+              <li><a href="https://wa.me/917676445237" target="_blank" style="display: inline-flex; align-items: center; gap: 8px;"><svg class="svg-icon svg-whatsapp" viewBox="0 0 24 24" width="16" height="16" fill="currentColor" style="color: var(--text-grey);"><path d="M12.012 2c-5.506 0-9.988 4.47-9.988 9.951 0 1.763.459 3.42 1.263 4.873l-1.343 4.908 5.045-1.317A9.92 9.92 0 0 0 12.01 22c5.507 0 9.99-4.47 9.99-9.951C22 6.47 17.518 2 12.012 2zm6.186 14.18c-.256.716-1.5 1.39-2.07 1.453-.513.056-1.18.083-1.89-.147a11.13 11.13 0 0 1-5.187-3.268c-1.428-1.57-2.38-3.488-2.66-4.28-.28-.79-.028-1.218.232-1.52.228-.266.505-.62.756-.93.25-.31.336-.53.504-.88.168-.35.084-.66-.042-.926-.126-.265-1.12-2.73-1.54-3.73-.41-1.01-.82-.87-1.12-.885-.286-.015-.613-.015-.94-.015-.328 0-.86.122-1.314.62-.454.5-1.73 1.69-1.73 4.12 0 2.43 1.77 4.77 2.017 5.11a14.7 14.7 0 0 0 5.64 4.98c1.378.56 2.378.71 3.254.58 1.002-.15 3.08-1.258 3.516-2.477.437-1.22.437-2.267.308-2.483-.128-.217-.474-.35-.99-.61z"/></svg> WhatsApp Support</a></li>
+              <li><a href="tel:+917676445237" style="display: inline-flex; align-items: center; gap: 8px;"><svg class="svg-icon svg-phone" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: var(--text-grey);"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72(12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg> +91 76764 45237</a></li>
             </ul>
           </div>
           <div class="footer-col">
             <h3>Legal</h3>
             <ul>
-              <li><a href="#">Owner Profile</a></li>
+              <li><a href="#" class="about-us-link">Owner Profile</a></li>
               <li><a href="#">Privacy Policy</a></li>
             </ul>
           </div>
@@ -420,6 +455,54 @@
         </div>
       </div>
     </footer>
+
+    <!-- About Us / Owner Profile Modal -->
+    <div id="about-modal" class="about-modal">
+      <div class="about-modal-backdrop"></div>
+      <div class="about-modal-content">
+        <button class="about-modal-close" id="modal-close-btn" aria-label="Close modal">&times;</button>
+        
+        <div class="modal-profile-header">
+          <div class="modal-profile-avatar">👑</div>
+          <div class="modal-profile-title">
+            <h3>Royal Aura</h3>
+            <p>Premium Packaged Drinking Water</p>
+          </div>
+        </div>
+
+        <div class="modal-body-section">
+          <h4>About The Brand</h4>
+          <p>Royal Aura represents the pinnacle of purity and refined taste. Sourced from the pristine historic valleys near Vani Vilas Sagara in Chitradurga, Karnataka, our water undergoes a state-of-the-art 12-stage purification system. We combine advanced Reverse Osmosis, UV Sterilization, and Ozone enrichment to deliver balanced, mineral-rich, crisp hydration crafted for royalty.</p>
+        </div>
+
+        <div class="modal-body-section">
+          <h4>Owner Profile</h4>
+          <p><strong>Likith</strong>, Founder & Managing Director of Royal Aura Beverages. A visionary entrepreneur dedicated to elevating standard daily hydration into an exquisite wellness experience. With a background in beverage engineering and quality assurance, Likith ensures that every single bottle leaving the plant meets the absolute highest national quality benchmarks.</p>
+        </div>
+
+        <div class="modal-body-section">
+          <h4>Corporate Office & Plant Details</h4>
+          <div class="modal-address-block">
+            <div class="modal-address-title">MANUFACTURED & MARKETED BY:</div>
+            <div class="modal-address-text">
+              <strong>Royal Aura Beverages Pvt. Ltd.</strong><br>
+              123, Blue Water Avenue,<br>
+              Premium Industrial Area,<br>
+              Chitradurga - 577501, Karnataka, India.
+            </div>
+          </div>
+        </div>
+
+        <div class="modal-body-section" style="margin-bottom: 0;">
+          <h4>Contact & Inquiry</h4>
+          <p style="font-size: 0.9rem; line-height: 1.6;">
+            📞 <strong>Phone:</strong> <a href="tel:+917676445237" style="color: #e5c158; text-decoration: underline;">+91 76764 45237</a><br>
+            💬 <strong>WhatsApp Support:</strong> <a href="https://wa.me/917676445237" target="_blank" style="color: #e5c158; text-decoration: underline;">Connect on Chat</a>
+          </p>
+        </div>
+      </div>
+    </div>
+
     <script type="module" src="/src/main.js"></script>
   </body>
 </html>
