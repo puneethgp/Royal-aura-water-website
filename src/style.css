@@ -434,35 +434,6 @@ a {
   color: #fff;
 }
 
-/* Sustainable Luxury Card */
-.sustainable-luxury {
-  grid-column: 1 / 2;
-  flex-direction: row;
-  align-items: center;
-  gap: 2rem;
-  padding: 2rem;
-}
-
-.bento-img-placeholder {
-  width: 150px;
-  height: 150px;
-  background: linear-gradient(135deg, #E0EAF5, #F0F4F8);
-  border-radius: 8px;
-  flex-shrink: 0;
-}
-
-.bento-content-right {
-  flex: 1;
-}
-
-.learn-more {
-  display: inline-block;
-  margin-top: 1rem;
-  color: var(--gold);
-  font-weight: 600;
-  font-size: 0.85rem;
-}
-
 /* Products Grid */
 .products-grid {
   display: grid;
