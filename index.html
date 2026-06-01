@@ -24,8 +24,11 @@
           <li><a href="#bulk-order">Bulk Order</a></li>
           <li><a href="#about">About Us</a></li>
         </ul>
-        <div class="nav-action">
-           <a href="#bulk-order" class="btn-primary">Order Now</a>
+        <div class="nav-action" style="display: flex; align-items: center; gap: 1.5rem;">
+           <a href="tel:+917676445237" class="nav-phone" style="font-weight: 600; color: var(--primary-blue); font-size: 0.95rem; display: inline-flex; align-items: center; gap: 5px;">
+             📞 +91 76764 45237
+           </a>
+           <a href="#bulk-order" class="btn-primary order-trigger">Order Now</a>
         </div>
       </div>
     </nav>
@@ -38,7 +41,7 @@
           <h1 class="hero-title">Every Drop<br><em>Royal.</em></h1>
           <p class="hero-desc">Experience the majestic clarity of Royal Aura. Our 12-stage purification process ensures that every sip is a testament to purity and refinement.</p>
           <div class="hero-actions">
-            <a href="#products" class="btn-primary">Drink Like Royalty</a>
+            <a href="#bulk-order" class="btn-primary order-trigger">Drink Like Royalty</a>
             <a href="#quality" class="btn-secondary">Our Process</a>
           </div>
         </div>
@@ -113,7 +116,7 @@
                <p>Perfect for corporate meetings and executive events where elegance meets portability.</p>
                <div class="product-action-row">
                  <span class="price">₹10.00</span>
-                 <button class="cart-btn">🛒</button>
+                 <button class="cart-btn order-trigger" data-product-key="500ml">🛒</button>
                </div>
             </div>
           </div>
@@ -130,7 +133,7 @@
                <p>Our signature faceted bottle. A statement of purity and status on any table.</p>
                <div class="product-action-row">
                  <span class="price">₹20.00</span>
-                 <button class="cart-btn">🛒</button>
+                 <button class="cart-btn order-trigger" data-product-key="1-ltr">🛒</button>
                </div>
             </div>
           </div>
@@ -146,7 +149,7 @@
                <p>Taller, broader, and more robust. Perfect for family dinners and active days.</p>
                <div class="product-action-row">
                  <span class="price">₹35.00</span>
-                 <button class="cart-btn">🛒</button>
+                 <button class="cart-btn order-trigger" data-product-key="2-ltr">🛒</button>
                </div>
             </div>
           </div>
@@ -163,7 +166,7 @@
                <p>Uninterrupted purity with a sleek luxury handle. Ideal for home and offices.</p>
                <div class="product-action-row">
                  <span class="price">₹80.00</span>
-                 <button class="cart-btn">🛒</button>
+                 <button class="cart-btn order-trigger" data-product-key="5-ltr">🛒</button>
                </div>
             </div>
           </div>
@@ -242,6 +245,57 @@
             <div class="tds-info">
               <strong>TDS:</strong> 75-120 mg/L (Ideal Sweet Taste)
             </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Delivery Areas Section -->
+    <section id="delivery" class="delivery-section section-padding">
+      <div class="container">
+        <div class="section-header text-center fade-in">
+          <p class="collection-tag">OUR NETWORK</p>
+          <h2>Serving the Heart of Karnataka</h2>
+          <div class="divider"></div>
+        </div>
+
+        <div class="delivery-container fade-in">
+          <!-- Left: Karnataka Map -->
+          <div class="delivery-map-card">
+            <img src="/karnataka_map.png" alt="Royal Aura Karnataka Coverage Map" class="map-img">
+            <div class="map-badge">
+              <span class="map-badge-icon">📍</span>
+              <span class="map-badge-text">CURRENT HUB<br><strong>4 Major Cities Served</strong></span>
+            </div>
+          </div>
+
+          <!-- Right: Grid of Cities -->
+          <div class="delivery-cities-grid">
+            
+            <div class="city-card">
+              <h3>Chitradurga</h3>
+              <p>Sourced from pristine historic valleys near Vani Vilas Sagara.</p>
+              <span class="city-status">OPERATIONAL</span>
+            </div>
+
+            <div class="city-card">
+              <h3>Davanagere</h3>
+              <p>Pure royal hydration for the city of heritage and culture.</p>
+              <span class="city-status">OPERATIONAL</span>
+            </div>
+
+            <div class="city-card">
+              <h3>Tumkuru</h3>
+              <p>Delivering refreshing luxury and pure hydration daily.</p>
+              <span class="city-status">OPERATIONAL</span>
+            </div>
+
+            <div class="city-card">
+              <h3>Bangalore</h3>
+              <p>Serving major corporate hubs and premium residences.</p>
+              <span class="city-status">OPERATIONAL</span>
+            </div>
+
           </div>
         </div>
       </div>
@@ -348,8 +402,9 @@
           <div class="footer-col">
             <h3>Services</h3>
             <ul>
-              <li><a href="#bulk-order">Bulk Orders</a></li>
-              <li><a href="#contact">Contact Us</a></li>
+              <li><a href="#bulk-order" class="order-trigger">Bulk Orders</a></li>
+              <li><a href="https://wa.me/917676445237" target="_blank">💬 WhatsApp Support</a></li>
+              <li><a href="tel:+917676445237" style="display: inline-flex; align-items: center; gap: 5px;">📞 +91 76764 45237</a></li>
             </ul>
           </div>
           <div class="footer-col">

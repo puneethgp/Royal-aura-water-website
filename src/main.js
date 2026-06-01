@@ -1,16 +1,14 @@
 // Main JavaScript
 
 // Configurable Business Constants
-const WHATSAPP_NUMBER = '919876543210'; // Replace with client business number (with country code e.g. 91 for India)
+const WHATSAPP_NUMBER = '917676445237'; // Direct business number (with country code 91 for India)
 
 // Packaged Water Product Catalog
 const PRODUCTS_CATALOG = {
-  '1-ltr': { name: '1 Litre Royal', packSize: 30, unit: 'case', sizeLabel: '1 Ltr' },
-  '2-ltr': { name: '2 Litre Premium', packSize: 15, unit: 'case', sizeLabel: '2 Ltr' },
-  '5-ltr': { name: '5 Litre Elite', packSize: 10, unit: 'case', sizeLabel: '5 Ltr' },
-  '20-ltr': { name: '20-Litre Jar', packSize: 1, unit: 'bottle', sizeLabel: '20 Ltr' },
-  '250ml': { name: '250ml Petite', packSize: 48, unit: 'case', sizeLabel: '250ml' },
-  '500ml': { name: '500ml Classic', packSize: 24, unit: 'case', sizeLabel: '500ml' }
+  '500ml': { name: '500ml Elegant', packSize: 24, unit: 'case', sizeLabel: '500ml' },
+  '1-ltr': { name: '1 Litre Royal', packSize: 12, unit: 'case', sizeLabel: '1 Ltr' },
+  '2-ltr': { name: '2 Litre Grande', packSize: 6, unit: 'case', sizeLabel: '2 Ltr' },
+  '5-ltr': { name: '5 Litre Majestic', packSize: 2, unit: 'case', sizeLabel: '5 Ltr' }
 };
 
 let rowCounter = 0;
@@ -64,6 +62,43 @@ document.addEventListener('DOMContentLoaded', () => {
       submitBtn.addEventListener('click', submitOrder);
     }
   }
+
+  // 4. Interactive Collapsible Reveal Logic for Bulk Order
+  const orderTriggers = document.querySelectorAll('.order-trigger');
+  const bulkSection = document.getElementById('bulk-order');
+
+  orderTriggers.forEach(trigger => {
+    trigger.addEventListener('click', (e) => {
+      e.preventDefault();
+      
+      if (bulkSection) {
+        // Reveal Section
+        bulkSection.classList.add('active');
+        
+        // Smooth scroll
+        bulkSection.scrollIntoView({ behavior: 'smooth' });
+      }
+
+      // Check if product cart trigger
+      const productKey = trigger.getAttribute('data-product-key');
+      if (productKey && PRODUCTS_CATALOG[productKey]) {
+        const container = document.getElementById('product-rows-container');
+        if (container) {
+          // Clear all existing dynamic rows
+          container.innerHTML = '';
+          rowCounter = 0;
+          
+          // Add a single custom row pre-selected to this product
+          addRow();
+          const firstSelect = container.querySelector('.product-select');
+          if (firstSelect) {
+            firstSelect.value = productKey;
+            calculateTotals();
+          }
+        }
+      }
+    });
+  });
 });
 
 // Dynamic HTML Constructor for Rows
